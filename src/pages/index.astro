@@ -1,0 +1,302 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const automations = [
+  {
+    category: "Getting Started",
+    items: [
+      "Introduction to n8n interface and basic concepts",
+      "Setting up your first webhook",
+      "Basic Gmail to Slack notification workflow",
+      "Creating a simple Twitter bot",
+      "Automating file backups to Google Drive",
+      "Basic data transformation using n8n",
+      "Creating your first scheduled task",
+      "Simple RSS feed to Discord notifications",
+      "Basic error handling in n8n",
+      "Working with environment variables"
+    ]
+  },
+  {
+    category: "Social Media Automation",
+    items: [
+      "Cross-posting between social platforms",
+      "Social media content calendar automation",
+      "Instagram post to Twitter/LinkedIn crossposting",
+      "Auto-responding to Twitter mentions",
+      "Schedule and track social media campaigns",
+      "YouTube video publication announcements",
+      "Social media hashtag monitoring",
+      "Auto-curate content for social sharing",
+      "Generate social media analytics reports",
+      "Schedule Instagram posts from Google Sheets"
+    ]
+  },
+  {
+    category: "Email Automation",
+    items: [
+      "Email response automation system",
+      "Gmail label-based workflow triggers",
+      "Email newsletter automation",
+      "Auto-reply system with AI integration",
+      "Email to CRM contact creation",
+      "Calendar event email notifications",
+      "Email sentiment analysis and routing",
+      "Automated email list cleaning",
+      "Customer support ticket creation from emails",
+      "Email attachment processing workflow"
+    ]
+  },
+  {
+    category: "Data Management",
+    items: [
+      "CSV file processing and transformation",
+      "Database synchronization between platforms",
+      "Automated data cleaning workflows",
+      "API data aggregation and storage",
+      "JSON to spreadsheet conversion",
+      "Multiple API data merging",
+      "Automated report generation",
+      "Database backup automation",
+      "Data validation workflows",
+      "Real-time data transformation pipeline"
+    ]
+  },
+  {
+    category: "Project Management",
+    items: [
+      "Jira to Slack updates",
+      "GitHub issues to Trello cards",
+      "Automated sprint reports",
+      "Project timeline notifications",
+      "Resource allocation tracking",
+      "Team capacity monitoring",
+      "Deadline reminder system",
+      "Project status dashboard updates",
+      "Time tracking integration",
+      "Meeting notes distribution"
+    ]
+  },
+  {
+    category: "AI Integration",
+    items: [
+      "LLM-powered content summarization",
+      "AI image generation workflow",
+      "Chatbot response automation",
+      "AI-powered data classification",
+      "Document analysis with AI",
+      "Automated content moderation",
+      "AI-powered translation pipeline",
+      "Sentiment analysis workflow",
+      "AI-powered task prioritization",
+      "Content optimization with AI"
+    ]
+  },
+  {
+    category: "E-commerce",
+    items: [
+      "Order processing automation",
+      "Inventory update notifications",
+      "Customer feedback collection",
+      "Sales report automation",
+      "Price monitoring system",
+      "Abandoned cart follow-ups",
+      "Product catalog updates",
+      "Customer segmentation automation",
+      "Review management system",
+      "Sales team notification workflow"
+    ]
+  },
+  {
+    category: "Document Management",
+    items: [
+      "Document approval workflow",
+      "File conversion automation",
+      "Document tagging system",
+      "Automated file organization",
+      "Contract processing workflow",
+      "Document expiration alerts",
+      "PDF generation automation",
+      "Document version control",
+      "Template-based document creation",
+      "Document sharing automation"
+    ]
+  },
+  {
+    category: "Analytics",
+    items: [
+      "Custom analytics dashboard updates",
+      "Automated KPI reporting",
+      "Competition monitoring system",
+      "Website traffic analysis",
+      "Social media metrics collection",
+      "Sales performance reporting",
+      "Email campaign analytics",
+      "Customer behavior tracking",
+      "ROI calculation automation",
+      "Real-time metrics dashboard"
+    ]
+  },
+  {
+    category: "Advanced Workflows",
+    items: [
+      "Multi-step approval workflows",
+      "Complex data transformation pipelines",
+      "Error recovery and retry mechanisms",
+      "Conditional workflow branching",
+      "Dynamic workflow generation",
+      "Multi-tenant automation setup",
+      "Workflow performance monitoring",
+      "Custom API integration",
+      "Complex scheduling patterns",
+      "Advanced error handling and notifications",
+      "Hybrid cloud-local workflow orchestration"
+    ]
+  }
+];
+---
+
+<Layout title="101 n8n Automations - Your Guide to Workflow Automation">
+	<main>
+		<div class="hero">
+			<h1>101 n8n <span class="text-gradient">Automations</span></h1>
+			<p class="subtitle">Your comprehensive guide to mastering workflow automation</p>
+			
+			<div class="cta-card">
+				<h2>Stay Updated!</h2>
+				<p>Get detailed guides and updates for all these automations directly in your inbox.</p>
+				<a href="https://sundance-solutions.mailcoach.app/101-automations-n8n" class="cta-button">
+					Join the Mailing List
+				</a>
+			</div>
+		</div>
+
+		<div class="automation-grid">
+			{automations.map(category => (
+				<div class="category-card">
+					<h2>{category.category}</h2>
+					<ul>
+						{category.items.map(item => (
+							<li>{item}</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+
+		<div class="bottom-cta">
+			<h2>Ready to Master n8n Automation?</h2>
+			<p>Don't miss out on detailed tutorials and tips for implementing these automations!</p>
+			<a href="https://sundance-solutions.mailcoach.app/101-automations-n8n" class="cta-button">
+				Subscribe Now
+			</a>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 1200px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.hero {
+		text-align: center;
+		margin-bottom: 4rem;
+		padding: 2rem;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.subtitle {
+		font-size: 1.5rem;
+		color: rgb(var(--accent-light));
+		margin-bottom: 2rem;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.cta-card {
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		border: 1px solid rgba(var(--accent-light), 25%);
+		border-radius: 8px;
+		padding: 2rem;
+		margin: 2rem auto;
+		max-width: 600px;
+	}
+	.cta-button {
+		display: inline-block;
+		padding: 1rem 2rem;
+		background: rgb(var(--accent));
+		color: white;
+		text-decoration: none;
+		border-radius: 4px;
+		font-weight: bold;
+		transition: all 0.2s ease;
+		margin-top: 1rem;
+	}
+	.cta-button:hover {
+		background: rgb(var(--accent-light));
+		color: rgb(var(--accent-dark));
+		transform: translateY(-2px);
+	}
+	.automation-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+	.category-card {
+		background: rgba(var(--accent-dark), 0.2);
+		border: 1px solid rgba(var(--accent-light), 15%);
+		border-radius: 8px;
+		padding: 1.5rem;
+		transition: transform 0.2s ease;
+	}
+	.category-card:hover {
+		transform: translateY(-5px);
+	}
+	.category-card h2 {
+		color: rgb(var(--accent-light));
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid rgba(var(--accent-light), 25%);
+		padding-bottom: 0.5rem;
+	}
+	.category-card ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.category-card li {
+		padding: 0.5rem 0;
+		font-size: 0.9rem;
+		border-bottom: 1px solid rgba(var(--accent-light), 10%);
+	}
+	.category-card li:last-child {
+		border-bottom: none;
+	}
+	.bottom-cta {
+		text-align: center;
+		margin-top: 4rem;
+		padding: 3rem;
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		border-radius: 8px;
+	}
+	.bottom-cta h2 {
+		color: rgb(var(--accent-light));
+		margin-bottom: 1rem;
+	}
+</style>
