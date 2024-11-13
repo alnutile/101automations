@@ -1,23 +1,52 @@
 ---
 interface Props {
 	title: string;
+	description: string;
+	ogImage: string;
+	keywords: string;
+	siteName: string;
 }
 
-const { title } = Astro.props;
+const { title, description, ogImage, keywords, siteName } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Basic SEO -->
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		
+		<!-- Open Graph / Social Media -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:site_name" content={siteName} />
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		
+		<slot name="head" />
 	</head>
 	<body>
 		<slot />
+
+			<script
+			type="text/javascript"
+			id="hs-script-loader"
+			async
+			defer
+			src="//js.hs-scripts.com/47820535.js"
+		></script>
 	</body>
 </html>
 <style is:global>
